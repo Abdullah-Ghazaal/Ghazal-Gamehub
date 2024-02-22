@@ -32,7 +32,7 @@ function PlatformIcons({ platforms }: Props) {
   };
 
   return (
-    <HStack marginY={2}>
+    <HStack>
       {platforms.map((platform) => (
         <Icon
           key={platform.id}
