@@ -5,6 +5,7 @@ function NavBar() {
   return (
     <HStack justifyContent="space-between" padding="10px" marginY={2}>
       <HStack>
+        <Icon boxSize={6} color={"red.500"} as={SlGameController}></Icon>
         <Heading
           fontFamily={"serif"}
           fontStyle={"italic"}
