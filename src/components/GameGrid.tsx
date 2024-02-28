@@ -25,11 +25,13 @@ function GameGrid({ gameQuery }: Props) {
               <GameCardSkeleton />
             </GameCardContainer>
           ))}
-        {data.map((game) => (
-          <GameCardContainer key={game.id}>
-            <GameCard game={game} />
-          </GameCardContainer>
-        ))}
+        {data.map((game) =>
+          game.esrb_rating ? (
+            <GameCardContainer key={game.id}>
+              <GameCard game={game} />
+            </GameCardContainer>
+          ) : null
+        )}
       </SimpleGrid>
     </>
   );
