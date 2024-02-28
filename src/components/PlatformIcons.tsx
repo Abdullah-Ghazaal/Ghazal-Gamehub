@@ -38,7 +38,7 @@ function PlatformIcons({ platforms }: Props) {
       {platforms.map((platform) => (
         <Icon
           key={platform.id}
-          color={"teal.300"}
+          color={"teal.400"}
           as={iconMap[platform.slug]}
         ></Icon>
       ))}
