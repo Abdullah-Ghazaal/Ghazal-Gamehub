@@ -23,7 +23,9 @@ const GenreList = ({ selectedGenre, onSelectedGenre }: Props) => {
 
   return (
     <>
-      <Heading marginBottom={4}>Genres</Heading>
+      <Heading marginBottom={4} fontSize="2xl">
+        Genres
+      </Heading>
       {isLoading && <GenreListSkeleton />}
       <List>
         {data.map((genre) => (
