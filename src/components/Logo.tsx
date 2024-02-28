@@ -9,7 +9,7 @@ function Logo() {
         borderStyle="dotted"
         borderColor={"blue.400"}
         padding="5px"
-        borderRadius="5px"
+        borderRadius="12px"
       >
         <Icon boxSize={6} color={"red.500"} as={SlGameController}></Icon>
         <Heading
@@ -17,7 +17,6 @@ function Logo() {
           fontStyle={"italic"}
           fontSize={"2xl"}
           letterSpacing={"2px"}
-          color={"blue.400"}
         >
           GHAZAL
         </Heading>
