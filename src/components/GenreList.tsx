@@ -39,6 +39,7 @@ const GenreList = ({ selectedGenre, onSelectedGenre }: Props) => {
                 <Image
                   boxSize="32px"
                   borderRadius={4}
+                  objectFit="cover"
                   src={getCroppedImgUrl(genre.image_background)}
                 />
                 {genre.id === selectedGenre?.id ? (
@@ -46,7 +47,9 @@ const GenreList = ({ selectedGenre, onSelectedGenre }: Props) => {
                     {genre.name}
                   </Text>
                 ) : (
-                  <Text>{genre.name}</Text>
+                  <Text whiteSpace="normal" textAlign="left">
+                    {genre.name}
+                  </Text>
                 )}
               </HStack>
             </Button>
