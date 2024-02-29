@@ -17,7 +17,7 @@ function NavBar({ onSearch }: Props) {
         spacing={8}
       >
         <Logo />
-        <Show above="md">
+        <Show above="sm">
           <SearchInput onSearch={onSearch} />
         </Show>
         <ColorModeSwitch />

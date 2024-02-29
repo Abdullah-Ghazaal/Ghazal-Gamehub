@@ -47,7 +47,7 @@ function App() {
       </Show>
       <GridItem area={"main"} padding={4}>
         <GamesHeading gameQuery={gameQuery} />
-        <Show below="md">
+        <Show below="lg">
           <GenresMobile
             selectedGenre={gameQuery.genre}
             onSelectedGenre={(genre) => setGameQuery({ ...gameQuery, genre })}
