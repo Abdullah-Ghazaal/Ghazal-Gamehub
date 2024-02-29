@@ -47,13 +47,13 @@ function App() {
       </Show>
       <GridItem area={"main"} padding={4}>
         <GamesHeading gameQuery={gameQuery} />
+        <Show below="md">
+          <GenresMobile
+            selectedGenre={gameQuery.genre}
+            onSelectedGenre={(genre) => setGameQuery({ ...gameQuery, genre })}
+          ></GenresMobile>
+        </Show>
         <HStack marginBottom={5}>
-          <Show below="md">
-            <GenresMobile
-              selectedGenre={gameQuery.genre}
-              onSelectedGenre={(genre) => setGameQuery({ ...gameQuery, genre })}
-            ></GenresMobile>
-          </Show>
           <PlatformSelector
             onSelectPlatform={(platform) =>
               setGameQuery({ ...gameQuery, platform })

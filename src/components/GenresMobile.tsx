@@ -20,7 +20,7 @@ interface Props {
 function GenresMobile({ onSelectedGenre, selectedGenre }: Props) {
   return (
     <Menu>
-      <MenuButton as={Button} rightIcon={<BsChevronDown />}>
+      <MenuButton as={Button} rightIcon={<BsChevronDown />} marginBottom={2}>
         {selectedGenre?.name || "Select Genre"}
       </MenuButton>
       <MenuList>
