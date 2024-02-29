@@ -10,7 +10,12 @@ interface Props {
 function NavBar({ onSearch }: Props) {
   return (
     <Box padding="10px">
-      <HStack justifyContent="space-between" marginTop={3} marginBottom={5}>
+      <HStack
+        justifyContent="space-between"
+        marginTop={3}
+        marginBottom={5}
+        spacing={8}
+      >
         <Logo />
         <Show above="md">
           <SearchInput onSearch={onSearch} />

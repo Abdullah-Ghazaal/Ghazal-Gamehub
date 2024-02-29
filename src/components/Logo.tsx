@@ -9,14 +9,15 @@ function Logo() {
         borderStyle="dotted"
         borderColor={"blue.400"}
         padding="5px"
-        borderRadius="12px"
+        paddingY="10px"
+        borderRadius="15px"
       >
         <Icon boxSize={6} color={"red.500"} as={SlGameController}></Icon>
         <Heading
           fontFamily={"serif"}
           fontStyle={"italic"}
           fontSize={"2xl"}
-          letterSpacing={"2px"}
+          letterSpacing={"1px"}
         >
           GHAZAL
         </Heading>

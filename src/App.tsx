@@ -32,11 +32,7 @@ function App() {
         lg: `220px 1fr`,
       }}
     >
-      <GridItem
-        area={"nav"}
-        width={{ xl: "1140px" }}
-        justifySelf={{ xl: "center" }}
-      >
+      <GridItem area={"nav"}>
         <NavBar
           onSearch={(searchText) => setGameQuery({ ...gameQuery, searchText })}
         ></NavBar>
