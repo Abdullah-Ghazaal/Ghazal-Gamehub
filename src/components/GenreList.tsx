@@ -43,7 +43,12 @@ const GenreList = ({ selectedGenre, onSelectedGenre }: Props) => {
                   src={getCroppedImgUrl(genre.image_background)}
                 />
                 {genre.id === selectedGenre?.id ? (
-                  <Text color="teal.300" fontWeight="bold">
+                  <Text
+                    color="teal.300"
+                    fontWeight="bold"
+                    whiteSpace="normal"
+                    textAlign="left"
+                  >
                     {genre.name}
                   </Text>
                 ) : (
