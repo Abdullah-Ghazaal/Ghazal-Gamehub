@@ -23,9 +23,13 @@ function GenresMobile({ onSelectedGenre, selectedGenre }: Props) {
       <MenuButton as={Button} rightIcon={<BsChevronDown />} marginBottom={2}>
         {selectedGenre?.name || "Select Genre"}
       </MenuButton>
-      <MenuList>
+      <MenuList width="90vw">
         {genres.map((genre) => (
-          <MenuItem key={genre.id} onClick={() => onSelectedGenre(genre)}>
+          <MenuItem
+            key={genre.id}
+            onClick={() => onSelectedGenre(genre)}
+            marginY={2}
+          >
             <Image
               src={getCroppedImgUrl(genre.image_background)}
               boxSize="32px"
@@ -43,7 +47,12 @@ function GenresMobile({ onSelectedGenre, selectedGenre }: Props) {
                 {genre.name}
               </Text>
             ) : (
-              <Text whiteSpace="normal" textAlign="left" fontSize={"lg"}>
+              <Text
+                whiteSpace="normal"
+                textAlign="left"
+                fontSize={"lg"}
+                fontWeight="bold"
+              >
                 {genre.name}
               </Text>
             )}
