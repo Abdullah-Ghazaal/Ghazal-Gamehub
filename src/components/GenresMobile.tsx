@@ -43,7 +43,7 @@ function GenresMobile({ onSelectedGenre, selectedGenre }: Props) {
                 {genre.name}
               </Text>
             ) : (
-              <Text whiteSpace="normal" textAlign="left">
+              <Text whiteSpace="normal" textAlign="left" fontSize={"lg"}>
                 {genre.name}
               </Text>
             )}
