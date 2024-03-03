@@ -1,28 +1,16 @@
-import { HStack, Heading, Icon, Link } from "@chakra-ui/react";
-import { SlGameController } from "react-icons/sl";
+import { Image, Link } from "@chakra-ui/react";
+import logo from "../assets/GhazalLogo.webp";
 
 function Logo() {
   return (
     <Link href="/">
-      <HStack
-        borderWidth="3px"
-        borderStyle="dotted"
-        borderColor={"blue.400"}
-        padding="5px"
-        paddingY="10px"
-        borderRadius="15px"
-      >
-        <Icon boxSize={6} color={"red.500"} as={SlGameController}></Icon>
-        <Heading
-          fontFamily={"serif"}
-          fontStyle={"italic"}
-          fontSize={"2xl"}
-          letterSpacing={"1px"}
-        >
-          GHAZAL
-        </Heading>
-        <Icon boxSize={6} color={"red.500"} as={SlGameController}></Icon>
-      </HStack>
+      <Image
+        src={logo}
+        width="78px"
+        objectFit="cover"
+        borderRadius="100%"
+        boxShadow="0 0 10px dodgerblue"
+      />
     </Link>
   );
 }
