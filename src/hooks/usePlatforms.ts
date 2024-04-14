@@ -4,7 +4,7 @@ import platformService, { Platform } from "../services/platformService";
 function usePlatforms() {
   //
 
-  return useQuery<Platform[], Error>({
+  return useQuery({
     ////
     queryKey: ["platforms"],
     ////

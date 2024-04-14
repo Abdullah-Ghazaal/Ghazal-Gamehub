@@ -4,7 +4,7 @@ import genreService, { Genre } from "../services/genreService";
 function useGeners() {
   //
 
-  return useQuery<Genre[], Error>({
+  return useQuery({
     ////
     queryKey: ["genres"],
     ////
