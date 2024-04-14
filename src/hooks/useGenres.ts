@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import genreService, { Genre } from "../services/genreService";
+import genreService from "../services/genreService";
 
 function useGeners() {
   //

@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import platformService, { Platform } from "../services/platformService";
+import platformService from "../services/platformService";
 
 function usePlatforms() {
   //
