@@ -10,7 +10,7 @@ import {
 import { BsChevronDown } from "react-icons/bs";
 import genres from "../data/genres";
 import getCroppedImgUrl from "../services/image-url";
-import { Genre } from "../hooks/useGenres";
+import { Genre } from "../services/genreService";
 
 interface Props {
   onSelectedGenre: (genre: Genre) => void;
