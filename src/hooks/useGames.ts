@@ -1,6 +1,7 @@
+import { useQuery } from "@tanstack/react-query";
 import { GameQuery } from "../App";
-import useData from "./useData";
 import { Platform } from "./usePlatforms";
+import apiClient, { FetchResponse } from "../services/api-client";
 
 interface esrb_rating {
   id: number;
@@ -18,18 +19,38 @@ export interface Game {
 }
 
 function useGames(gameQuery: GameQuery) {
-  return useData<Game>(
-    "/games",
-    {
-      params: {
-        genres: gameQuery.genre?.id,
-        parent_platforms: gameQuery.platform?.id,
-        ordering: gameQuery.sortOrder,
-        search: gameQuery.searchText,
-      },
+  // return useData<Game>(
+  //   "/games",
+  //   {
+  //     params: {
+  //       genres: gameQuery.genre?.id,
+  //       parent_platforms: gameQuery.platform?.id,
+  //       ordering: gameQuery.sortOrder,
+  //       search: gameQuery.searchText,
+  //     },
+  //   },
+  //   [gameQuery]
+  // );
+
+  return useQuery<Game[], Error>({
+    ////
+    queryKey: ["games", gameQuery],
+    ////
+    queryFn: () => {
+      return apiClient
+        .get<FetchResponse<Game>>("/games", {
+          params: {
+            genres: gameQuery.genre?.id,
+            parent_platforms: gameQuery.platform?.id,
+            ordering: gameQuery?.sortOrder,
+            search: gameQuery?.searchText,
+          },
+        })
+        .then(({ data }) => data.results);
     },
-    [gameQuery]
-  );
+    ////
+    staleTime: 60 * 60 * 1000, // 1h
+  });
 }
 
 export default useGames;
