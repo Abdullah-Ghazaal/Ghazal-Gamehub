@@ -14,10 +14,10 @@ import GenreListSkeleton from "./GenreListSkeleton";
 
 interface Props {
   onSelectedGenre: (genre: Genre) => void;
-  selectedGenre: Genre | null;
+  selectedGenreID?: number;
 }
 
-const GenreList = ({ selectedGenre, onSelectedGenre }: Props) => {
+const GenreList = ({ selectedGenreID, onSelectedGenre }: Props) => {
   const { data, error, isLoading } = useGeners();
 
   if (error) return null;
@@ -43,7 +43,7 @@ const GenreList = ({ selectedGenre, onSelectedGenre }: Props) => {
                   objectFit="cover"
                   src={getCroppedImgUrl(genre.image_background)}
                 />
-                {genre.id === selectedGenre?.id ? (
+                {genre.id === selectedGenreID ? (
                   <Text
                     color="teal.300"
                     fontWeight="bold"

@@ -5,11 +5,16 @@ import { Platform } from "../services/platformService";
 
 interface Props {
   onSelectPlatform: (platform: Platform) => void;
-  selectedPlatform: Platform | null;
+  selectedPlatformID?: number;
 }
 
-function PlatformSelector({ onSelectPlatform, selectedPlatform }: Props) {
+function PlatformSelector({ onSelectPlatform, selectedPlatformID }: Props) {
+  ////
   const { data, error } = usePlatforms();
+  const selectedPlatform = data?.results.find(
+    (p) => p.id === selectedPlatformID
+  );
+  ////
 
   if (error) return null;
 

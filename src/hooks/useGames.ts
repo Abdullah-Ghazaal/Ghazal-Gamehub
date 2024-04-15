@@ -11,15 +11,15 @@ function useGames(gameQuery: GameQuery) {
     queryFn: ({ pageParam = 1 }) =>
       gamesService.get({
         params: {
-          genres: gameQuery.genre?.id,
-          parent_platforms: gameQuery.platform?.id,
+          genres: gameQuery?.genreID,
+          parent_platforms: gameQuery?.platformID,
           ordering: gameQuery?.sortOrder,
           search: gameQuery?.searchText,
           page: pageParam,
         },
       }),
     ////
-    staleTime: 60 * 60 * 1000, // 1h
+    staleTime: 24 * 60 * 60 * 1000, // 24h
     ////
     getNextPageParam: (lastPage, allPages) => {
       return lastPage.next ? allPages.length + 1 : undefined;

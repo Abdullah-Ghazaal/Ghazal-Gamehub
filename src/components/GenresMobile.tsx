@@ -14,10 +14,12 @@ import { Genre } from "../services/genreService";
 
 interface Props {
   onSelectedGenre: (genre: Genre) => void;
-  selectedGenre: Genre | null;
+  selectedGenreID?: number;
 }
 
-function GenresMobile({ onSelectedGenre, selectedGenre }: Props) {
+function GenresMobile({ onSelectedGenre, selectedGenreID }: Props) {
+  const selectedGenre = genres.find((g) => g.id === selectedGenreID);
+
   return (
     <Menu>
       <MenuButton as={Button} rightIcon={<BsChevronDown />} marginBottom={2}>
