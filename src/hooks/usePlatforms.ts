@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import platformService from "../services/platformService";
+import ms from "ms";
 
 function usePlatforms() {
   //
@@ -10,7 +11,7 @@ function usePlatforms() {
     ////
     queryFn: () => platformService.get(),
     ////
-    staleTime: 24 * 60 * 60 * 1000, // 24h
+    staleTime: ms("24h"),
   });
 
   //

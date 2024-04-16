@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import genreService from "../services/genreService";
-
+import ms from "ms";
 function useGeners() {
   //
 
@@ -10,7 +10,7 @@ function useGeners() {
     ////
     queryFn: () => genreService.get(),
     ////
-    staleTime: 24 * 60 * 60 * 1000, // 24h,
+    staleTime: ms("24h"),
   });
 
   //
