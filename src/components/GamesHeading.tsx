@@ -14,9 +14,11 @@ function GamesHeading() {
     selectedGenre?.name || ""
   } Games`;
   ////
+  const searchHeading = `Search results: "${gameQuery.searchText}"`;
+  ////
   return (
     <Heading as="h1" fontSize="5xl" marginBottom={5}>
-      {heading}
+      {gameQuery.searchText ? searchHeading : heading}
     </Heading>
   );
 }
