@@ -1,10 +1,12 @@
 import { useInfiniteQuery } from "@tanstack/react-query";
-import { GameQuery } from "../App";
 import gamesService, { Game } from "../services/gamesService";
 import { FetchResponse } from "../services/api-client";
 import ms from "ms";
+import useGameQueryParamStore from "../services/store";
 
-function useGames(gameQuery: GameQuery) {
+function useGames() {
+  const gameQuery = useGameQueryParamStore((s) => s.gameQuery);
+  //
   return useInfiniteQuery<FetchResponse<Game>, Error>({
     ////
     queryKey: ["games", gameQuery],

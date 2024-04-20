@@ -3,11 +3,7 @@ import ColorModeSwitch from "./ColorModeSwitch";
 import Logo from "./Logo";
 import SearchInput from "./SearchInput";
 
-interface Props {
-  onSearch: (searchText: string) => void;
-}
-
-function NavBar({ onSearch }: Props) {
+function NavBar() {
   return (
     <Box padding="10px">
       <HStack
@@ -18,12 +14,12 @@ function NavBar({ onSearch }: Props) {
       >
         <Logo />
         <Show above="sm">
-          <SearchInput onSearch={onSearch} />
+          <SearchInput />
         </Show>
         <ColorModeSwitch />
       </HStack>
       <Show below="sm">
-        <SearchInput onSearch={onSearch} />
+        <SearchInput />
       </Show>
     </Box>
   );

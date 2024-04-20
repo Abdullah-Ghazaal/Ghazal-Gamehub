@@ -10,15 +10,15 @@ import {
 import { BsChevronDown } from "react-icons/bs";
 import genres from "../data/genres";
 import getCroppedImgUrl from "../services/image-url";
-import { Genre } from "../services/genreService";
+import useGameQueryParamStore from "../services/store";
 
-interface Props {
-  onSelectedGenre: (genre: Genre) => void;
-  selectedGenreID?: number;
-}
+function GenresMobile() {
+  const [setGenreID, genreID] = useGameQueryParamStore((s) => [
+    s.setGenreID,
+    s.gameQuery.genreID,
+  ]);
 
-function GenresMobile({ onSelectedGenre, selectedGenreID }: Props) {
-  const selectedGenre = genres.find((g) => g.id === selectedGenreID);
+  const selectedGenre = genres.find((g) => g.id === genreID);
 
   return (
     <Menu>
@@ -29,7 +29,7 @@ function GenresMobile({ onSelectedGenre, selectedGenreID }: Props) {
         {genres.map((genre) => (
           <MenuItem
             key={genre.id}
-            onClick={() => onSelectedGenre(genre)}
+            onClick={() => setGenreID(genre.id)}
             marginY={2}
           >
             <Image

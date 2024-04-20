@@ -1,12 +1,11 @@
 import { Button } from "@chakra-ui/react";
+import useGameQueryParamStore from "../services/store";
 
-interface Props {
-  onClearFilters: () => void;
-}
+function ClearFilters() {
+  const clearFilters = useGameQueryParamStore((s) => s.clearFilters);
 
-function ClearFilters({ onClearFilters }: Props) {
   return (
-    <Button colorScheme="red" onClick={() => onClearFilters()}>
+    <Button colorScheme="red" onClick={() => clearFilters()}>
       Clear filters
     </Button>
   );
