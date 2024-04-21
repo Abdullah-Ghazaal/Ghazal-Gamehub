@@ -5,7 +5,7 @@ import SearchInput from "./SearchInput";
 
 function NavBar() {
   return (
-    <Box padding="10px">
+    <Box paddingY="10px" paddingX={4}>
       <HStack
         justifyContent="space-between"
         marginTop={3}

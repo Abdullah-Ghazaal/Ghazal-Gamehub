@@ -20,7 +20,7 @@ function GenresMobile() {
 
   return (
     <Menu>
-      <MenuButton as={Button} rightIcon={<BsChevronDown />} marginBottom={2}>
+      <MenuButton as={Button} rightIcon={<BsChevronDown />}>
         {selectedGenre?.name || "Select Genre"}
       </MenuButton>
       <MenuList width="90vw">
