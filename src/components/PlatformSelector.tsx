@@ -17,10 +17,10 @@ function PlatformSelector() {
 
   return (
     <Menu>
-      <MenuButton as={Button} rightIcon={<BsChevronDown />}>
+      <MenuButton as={Button} rightIcon={<BsChevronDown />} flexGrow={1}>
         {selectedPlatform?.name || "Select Platform"}
       </MenuButton>
-      <MenuList>
+      <MenuList width="28vw">
         {data?.results.map((platform) => (
           <MenuItem
             onClick={() => setPlatformID(platform.id)}

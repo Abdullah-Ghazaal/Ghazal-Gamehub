@@ -6,7 +6,7 @@ function ClearFilters() {
   const searchText = useGameQueryParamStore((s) => s.gameQuery.searchText);
 
   return (
-    <Button colorScheme="red" onClick={() => clearFilters()}>
+    <Button colorScheme="red" onClick={() => clearFilters()} flexGrow={1}>
       {searchText ? "Clear Search" : "Clear Filters"}
     </Button>
   );

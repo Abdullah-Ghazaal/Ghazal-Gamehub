@@ -31,7 +31,7 @@ function App() {
       </Show>
       <GridItem area={"main"} padding={4}>
         <GamesHeading />
-        <Stack marginBottom={5}>
+        <Stack marginBottom={6}>
           <Show below="lg">
             <GenresMobile></GenresMobile>
           </Show>

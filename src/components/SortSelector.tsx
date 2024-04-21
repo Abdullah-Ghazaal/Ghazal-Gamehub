@@ -23,10 +23,10 @@ function SortSelector() {
 
   return (
     <Menu>
-      <MenuButton as={Button} rightIcon={<BsChevronDown />}>
+      <MenuButton as={Button} rightIcon={<BsChevronDown />} flexGrow={1}>
         Order by: {currentSortOrder?.label || "Relevance"}
       </MenuButton>
-      <MenuList>
+      <MenuList width="28vw">
         {sortOrders.map((order) => (
           <MenuItem
             onClick={() => setSortOrder(order.value)}
