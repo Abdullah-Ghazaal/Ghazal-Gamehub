@@ -3,10 +3,8 @@ import { BsChevronDown } from "react-icons/bs";
 import useGameQueryParamStore from "../services/store";
 
 function SortSelector() {
-  const [setSortOrder, sortOrder] = useGameQueryParamStore((s) => [
-    s.setSortOrder,
-    s.gameQuery.sortOrder,
-  ]);
+  const setSortOrder = useGameQueryParamStore((s) => s.setSortOrder);
+  const sortOrder = useGameQueryParamStore((s) => s.gameQuery.sortOrder);
 
   ////
 
@@ -22,6 +20,7 @@ function SortSelector() {
   const currentSortOrder = sortOrders.find(
     (order) => order.value === sortOrder
   );
+
   return (
     <Menu>
       <MenuButton as={Button} rightIcon={<BsChevronDown />}>

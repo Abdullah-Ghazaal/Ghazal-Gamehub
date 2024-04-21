@@ -7,10 +7,8 @@ import useFindPlatform from "../hooks/useFindPlatform";
 function PlatformSelector() {
   const { data, error } = usePlatforms();
   ////
-  const [setPlatformID, platformID] = useGameQueryParamStore((s) => [
-    s.setPlatformID,
-    s.gameQuery.platformID,
-  ]);
+  const setPlatformID = useGameQueryParamStore((s) => s.setPlatformID);
+  const platformID = useGameQueryParamStore((s) => s.gameQuery.platformID);
   ////
   const selectedPlatform = useFindPlatform(platformID);
   ////

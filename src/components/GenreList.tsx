@@ -15,10 +15,8 @@ import useGameQueryParamStore from "../services/store";
 const GenreList = () => {
   const { data, error, isLoading } = useGeners();
   ////
-  const [setGenreID, selectedGenreID] = useGameQueryParamStore((s) => [
-    s.setGenreID,
-    s.gameQuery.genreID,
-  ]);
+  const setGenreID = useGameQueryParamStore((s) => s.setGenreID);
+  const selectedGenreID = useGameQueryParamStore((s) => s.gameQuery.genreID);
   ////
 
   if (error) return null;

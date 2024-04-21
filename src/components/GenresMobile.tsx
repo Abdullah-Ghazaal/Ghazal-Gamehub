@@ -13,10 +13,8 @@ import getCroppedImgUrl from "../services/image-url";
 import useGameQueryParamStore from "../services/store";
 
 function GenresMobile() {
-  const [setGenreID, genreID] = useGameQueryParamStore((s) => [
-    s.setGenreID,
-    s.gameQuery.genreID,
-  ]);
+  const setGenreID = useGameQueryParamStore((s) => s.setGenreID);
+  const genreID = useGameQueryParamStore((s) => s.gameQuery.genreID);
 
   const selectedGenre = genres.find((g) => g.id === genreID);
 
