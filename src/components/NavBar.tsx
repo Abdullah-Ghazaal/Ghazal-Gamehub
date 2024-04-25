@@ -14,7 +14,9 @@ function NavBar() {
       >
         <Logo />
         <Show above="sm">
-          <SearchInput />
+          <Box flexGrow="1">
+            <SearchInput />
+          </Box>
         </Show>
         <ColorModeSwitch />
       </HStack>
