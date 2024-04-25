@@ -1,29 +1,24 @@
-import { Grid, GridItem, HStack, Show, Stack } from "@chakra-ui/react";
-import NavBar from "./components/NavBar";
-import GameGrid from "./components/GameGrid";
-import GenreList from "./components/GenreList";
-import PlatformSelector from "./components/PlatformSelector";
-import SortSelector from "./components/SortSelector";
-import "./App.css";
-import GamesHeading from "./components/GamesHeading";
-import GenresMobile from "./components/GenresMobile";
-import ClearFilters from "./components/ClearFilters";
+import { Grid, Show, GridItem, Stack, HStack } from "@chakra-ui/react";
+import ClearFilters from "../components/ClearFilters";
+import GameGrid from "../components/GameGrid";
+import GamesHeading from "../components/GamesHeading";
+import GenreList from "../components/GenreList";
+import GenresMobile from "../components/GenresMobile";
+import PlatformSelector from "../components/PlatformSelector";
+import SortSelector from "../components/SortSelector";
 
-function App() {
+function HomePage() {
   return (
     <Grid
       templateAreas={{
-        base: `"nav" "main"`,
-        lg: `"nav nav" "aside main"`,
+        base: `"main"`,
+        lg: `"aside main"`,
       }}
       templateColumns={{
         base: "1fr",
         lg: `220px 1fr`,
       }}
     >
-      <GridItem area={"nav"}>
-        <NavBar></NavBar>
-      </GridItem>
       <Show above="lg">
         <GridItem area={"aside"} paddingX={2}>
           <GenreList />
@@ -52,4 +47,4 @@ function App() {
   );
 }
 
-export default App;
+export default HomePage;
