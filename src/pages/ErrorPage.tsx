@@ -10,12 +10,13 @@ function ErrorPage() {
       <NavBar />
       <Stack
         spacing={5}
-        height="70vh"
+        height="50vh"
         justifyContent="center"
         alignItems="center"
+        padding={3}
       >
         <Heading as={"h1"}>Oops... 😓</Heading>
-        <Text fontSize="xl">
+        <Text fontSize="xl" textAlign="center">
           {isRouteError
             ? "Invalid URL, the page does not exist or it has been removed"
             : "Sorry, something went wrong try to refresh the page"}
