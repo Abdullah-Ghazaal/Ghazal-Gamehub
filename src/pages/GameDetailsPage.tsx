@@ -1,10 +1,10 @@
 import { useParams } from "react-router-dom";
 import useGameDetails from "../hooks/useGameDetails";
-import { Box, Heading, Spinner, Text } from "@chakra-ui/react";
+import { Box, Heading, Spinner } from "@chakra-ui/react";
+import ExpandableText from "../components/ExpandableText";
 
 function GameDetailsPage() {
   const { slug } = useParams();
-
   const { data: game, error, isLoading } = useGameDetails(slug!);
 
   if (error) throw new Error(); // to redirect to the ErrorPage.
@@ -19,7 +19,7 @@ function GameDetailsPage() {
   return (
     <Box padding={4}>
       <Heading as="h2">{game.name}</Heading>
-      <Text>{game.description_raw}</Text>
+      <ExpandableText>{game.description_raw}</ExpandableText>
     </Box>
   );
 }
