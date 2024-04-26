@@ -9,7 +9,7 @@ function usePlatforms() {
     ////
     queryKey: ["platforms"],
     ////
-    queryFn: () => platformService.get(),
+    queryFn: () => platformService.getAll(),
     ////
     staleTime: ms("24h"),
   });

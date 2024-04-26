@@ -8,7 +8,7 @@ function useGeners() {
     ////
     queryKey: ["genres"],
     ////
-    queryFn: () => genreService.get(),
+    queryFn: () => genreService.getAll(),
     ////
     staleTime: ms("24h"),
   });

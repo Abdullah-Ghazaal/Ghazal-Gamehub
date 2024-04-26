@@ -3,15 +3,17 @@ import { Game } from "../services/gamesService";
 import PlatformIcons from "./PlatformIcons";
 import CriticScore from "./CriticScore";
 import getCroppedImgUrl from "../services/image-url";
+import { useNavigate } from "react-router-dom";
 
 interface Props {
   game: Game;
 }
 
 function GameCard({ game }: Props) {
+  const navigate = useNavigate();
   return (
     <>
-      <Card>
+      <Card onClick={() => navigate(`/games/${game.slug}`)}>
         <Image src={getCroppedImgUrl(game.background_image)}></Image>
         <CardBody>
           <HStack justifyContent="space-between" marginBottom={3}>

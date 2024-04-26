@@ -12,7 +12,7 @@ function useGames() {
     queryKey: ["games", gameQuery],
     ////
     queryFn: ({ pageParam = 1 }) =>
-      gamesService.get({
+      gamesService.getAll({
         params: {
           genres: gameQuery?.genreID,
           parent_platforms: gameQuery?.platformID,
