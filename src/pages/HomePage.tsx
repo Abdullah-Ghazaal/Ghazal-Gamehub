@@ -9,7 +9,16 @@ import SortSelector from "../components/SortSelector";
 
 function HomePage() {
   return (
-    <>
+    <Grid
+      templateAreas={{
+        base: `"main"`,
+        lg: `"aside main"`,
+      }}
+      templateColumns={{
+        base: "1fr",
+        lg: `220px 1fr`,
+      }}
+    >
       <Show above="lg">
         <GridItem area={"aside"} paddingX={2}>
           <GenreList />
@@ -34,7 +43,7 @@ function HomePage() {
         </Stack>
         <GameGrid />
       </GridItem>
-    </>
+    </Grid>
   );
 }
 
