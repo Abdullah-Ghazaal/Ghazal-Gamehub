@@ -18,6 +18,7 @@ function Layout() {
         <NavBar />
       </GridItem>
       <Outlet />
+      {/* All Outlet components (the layout route's children components) must be wrapped in a GridItem component */}
     </Grid>
   );
 }
