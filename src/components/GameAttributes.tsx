@@ -29,7 +29,9 @@ function GameAttributes({ game }: Props) {
       </DescriptionTerm>
       <DescriptionTerm term="Publishers">
         {game.publishers.map((p) => (
-          <Text key={p.id}>{p.name}</Text>
+          <Text key={p.id} as="dd">
+            {p.name}
+          </Text>
         ))}
       </DescriptionTerm>
       <DescriptionTerm term="Website">
@@ -38,7 +40,9 @@ function GameAttributes({ game }: Props) {
         </Link>
       </DescriptionTerm>
       <DescriptionTerm term="Release Date">
-        <Text>{!game?.released ? "No info available" : game.released}</Text>
+        <Text as="dd">
+          {!game?.released ? "No info available" : game.released}
+        </Text>
       </DescriptionTerm>
     </SimpleGrid>
   );
