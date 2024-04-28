@@ -21,14 +21,20 @@ function GameTrailer({ slug }: Props) {
   const videoSrc =
     videoQuality === "480" ? firstTrailer.data[480] : firstTrailer.data.max;
 
+  const btnHDColor = videoQuality === "HD" ? "gray" : "pink";
+  const btn480Color = videoQuality === "480" ? "gray" : "green";
+
   return (
     <>
       <HStack my={1} justifyContent="center">
-        <Button onClick={() => setVideoQuality("HD")} colorScheme="pink">
-          HD
+        <Button onClick={() => setVideoQuality("HD")} colorScheme={btnHDColor}>
+          {videoQuality === "HD" ? "HD ✅" : "HD"}
         </Button>
-        <Button onClick={() => setVideoQuality("480")} colorScheme="green">
-          480p
+        <Button
+          onClick={() => setVideoQuality("480")}
+          colorScheme={btn480Color}
+        >
+          {videoQuality === "480" ? "480 ✅" : "480"}
         </Button>
       </HStack>
       <AspectRatio ratio={16 / 9}>

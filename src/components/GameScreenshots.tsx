@@ -11,10 +11,10 @@ function GameScreenshots({ gameId }: Props) {
   if (error || isLoading) return null;
 
   return (
-    <SimpleGrid columns={{ base: 1, md: 2 }} spacing={3}>
+    <SimpleGrid columns={{ base: 1, md: 2 }} spacing={3} my={3}>
       {data?.results.map((screenshot) => (
         <GridItem key={screenshot.id}>
-          <Img src={screenshot.image} borderRadius="15px" />
+          <Img src={screenshot.image} borderRadius="15px" height="100%" />
         </GridItem>
       ))}
     </SimpleGrid>

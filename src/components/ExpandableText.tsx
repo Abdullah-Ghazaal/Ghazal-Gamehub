@@ -24,7 +24,7 @@ function ExpandableText({ children }: Props) {
       {text}
       <Button
         size="sm"
-        colorScheme="teal"
+        colorScheme="yellow"
         marginLeft={1}
         fontWeight="bold"
         onClick={() => setExpandText((prev) => !prev)}
