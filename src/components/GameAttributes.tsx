@@ -14,8 +14,7 @@ function GameAttributes({ game }: Props) {
       columns={2}
       gridTemplateColumns={"1.5fr 1fr"}
       marginY={7}
-      spacingY={4}
-      spacingX={2}
+      spacing={4}
     >
       <GridItem>
         <DescriptionTerm term="Genres">
@@ -52,7 +51,7 @@ function GameAttributes({ game }: Props) {
       <GridItem>
         <DescriptionTerm term="Website">
           <Link href={game.website} target="_blank" textDecoration="underline">
-            {game.website}
+            {game.website.substring(11, 32) /* to shorten the url */}
           </Link>
         </DescriptionTerm>
       </GridItem>
