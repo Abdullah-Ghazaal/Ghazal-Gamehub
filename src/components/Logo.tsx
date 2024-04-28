@@ -1,9 +1,10 @@
-import { Image, Link } from "@chakra-ui/react";
+import { Image } from "@chakra-ui/react";
 import logo from "../assets/GhazalLogo.webp";
+import { Link } from "react-router-dom";
 
 function Logo() {
   return (
-    <Link href="/">
+    <Link to="/">
       <Image
         src={logo}
         width="78px"

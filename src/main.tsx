@@ -7,11 +7,13 @@ import theme from "./theme";
 import "./index.css";
 import { RouterProvider } from "react-router-dom";
 import { router } from "./routes";
+import ms from "ms";
 
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
       refetchOnWindowFocus: false,
+      cacheTime: ms("1h"),
     },
   },
 });
