@@ -1,11 +1,12 @@
 import { useParams } from "react-router-dom";
 import useGameDetails from "../hooks/useGameDetails";
-import { GridItem, Heading, Link, SimpleGrid } from "@chakra-ui/react";
+import { GridItem, Heading, Icon, Link, SimpleGrid } from "@chakra-ui/react";
 import ExpandableText from "../components/ExpandableText";
 import GameAttributes from "../components/GameAttributes";
 import GameTrailer from "../components/GameTrailer";
 import GameScreenshots from "../components/GameScreenshots";
 import DetailsPageSkeleton from "../components/DetailsPageSkeleton";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 function GameDetailsPage() {
   const { slug } = useParams();
@@ -27,7 +28,7 @@ function GameDetailsPage() {
           fontWeight="bold"
           color="teal.300"
         >
-          Data Source: RAWG API
+          Data Source: RAWG API <Icon as={FaExternalLinkAlt} boxSize={3}></Icon>
         </Link>
         <ExpandableText>{game.description_raw}</ExpandableText>
         <GameAttributes game={game} />

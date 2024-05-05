@@ -1,7 +1,8 @@
-import { Box, Heading, Link } from "@chakra-ui/react";
+import { Box, Heading, Icon, Link } from "@chakra-ui/react";
 import useFindGenre from "../hooks/useFindGenre";
 import useFindPlatform from "../hooks/useFindPlatform";
 import useGameQueryParamStore from "../services/store";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 function GamesHeading() {
   const gameQuery = useGameQueryParamStore((s) => s.gameQuery);
@@ -27,7 +28,7 @@ function GamesHeading() {
         fontWeight="bold"
         color="teal.300"
       >
-        Data Source: RAWG API
+        Data Source: RAWG API <Icon as={FaExternalLinkAlt} boxSize={3}></Icon>
       </Link>
     </Box>
   );
