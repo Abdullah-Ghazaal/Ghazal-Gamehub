@@ -22,7 +22,7 @@ function GamesHeading() {
         {gameQuery.searchText ? searchHeading : heading}
       </Heading>
       <Link
-        href="https://api.rawg.io"
+        href="https://rawg.io/apidocs"
         target="_blank"
         fontWeight="bold"
         color="teal.300"

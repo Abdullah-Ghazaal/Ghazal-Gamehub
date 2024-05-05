@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import useGameDetails from "../hooks/useGameDetails";
-import { GridItem, Heading, SimpleGrid } from "@chakra-ui/react";
+import { GridItem, Heading, Link, SimpleGrid } from "@chakra-ui/react";
 import ExpandableText from "../components/ExpandableText";
 import GameAttributes from "../components/GameAttributes";
 import GameTrailer from "../components/GameTrailer";
@@ -21,6 +21,14 @@ function GameDetailsPage() {
         <Heading as="h2" mb={2}>
           {game.name}
         </Heading>
+        <Link
+          href="https://rawg.io/apidocs"
+          target="_blank"
+          fontWeight="bold"
+          color="teal.300"
+        >
+          Data Source: RAWG API
+        </Link>
         <ExpandableText>{game.description_raw}</ExpandableText>
         <GameAttributes game={game} />
       </GridItem>
