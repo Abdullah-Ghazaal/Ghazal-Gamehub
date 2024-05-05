@@ -1,4 +1,4 @@
-import { Heading } from "@chakra-ui/react";
+import { Box, Heading, Link } from "@chakra-ui/react";
 import useFindGenre from "../hooks/useFindGenre";
 import useFindPlatform from "../hooks/useFindPlatform";
 import useGameQueryParamStore from "../services/store";
@@ -17,9 +17,19 @@ function GamesHeading() {
   const searchHeading = `Search results: "${gameQuery.searchText}"`;
   ////
   return (
-    <Heading as="h1" fontSize="5xl" marginBottom={5}>
-      {gameQuery.searchText ? searchHeading : heading}
-    </Heading>
+    <Box marginBottom={5}>
+      <Heading as="h1" fontSize="5xl">
+        {gameQuery.searchText ? searchHeading : heading}
+      </Heading>
+      <Link
+        href="https://api.rawg.io"
+        target="_blank"
+        fontWeight="bold"
+        color="teal.300"
+      >
+        Data Source: RAWG API
+      </Link>
+    </Box>
   );
 }
 
