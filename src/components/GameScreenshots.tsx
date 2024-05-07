@@ -14,7 +14,11 @@ function GameScreenshots({ gameId }: Props) {
     <SimpleGrid columns={{ base: 1, md: 2 }} spacing={3} my={3}>
       {data?.results.map((screenshot) => (
         <GridItem key={screenshot.id}>
-          <Img src={screenshot.image} borderRadius="15px" />
+          <Img
+            src={screenshot.image}
+            borderRadius="15px"
+            border="1px solid teal"
+          />
         </GridItem>
       ))}
     </SimpleGrid>

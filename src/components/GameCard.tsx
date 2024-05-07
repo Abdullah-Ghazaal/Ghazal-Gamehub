@@ -13,7 +13,7 @@ function GameCard({ game }: Props) {
   const navigate = useNavigate();
   return (
     <>
-      <Card onClick={() => navigate(`/games/${game.slug}`)}>
+      <Card onClick={() => navigate(`/games/${game.slug}`)} height="100%">
         <Image src={getCroppedImgUrl(game.background_image)}></Image>
         <CardBody>
           <HStack justifyContent="space-between" marginBottom={3}>

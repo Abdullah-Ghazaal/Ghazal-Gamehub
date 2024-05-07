@@ -9,6 +9,7 @@ function GameCardContainer({ children }: Props) {
   return (
     <Box
       borderRadius={12}
+      border="1px solid teal"
       overflow="hidden"
       _hover={{
         transform: "scale(1.05)",
