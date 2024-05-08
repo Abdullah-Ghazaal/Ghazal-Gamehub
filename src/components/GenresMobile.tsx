@@ -37,25 +37,16 @@ function GenresMobile() {
               objectFit="cover"
               marginRight="8px"
             />
-            {genre.id === selectedGenre?.id ? (
-              <Text
-                color="teal.300"
-                fontWeight="bold"
-                whiteSpace="normal"
-                textAlign="left"
-              >
-                {genre.name}
-              </Text>
-            ) : (
-              <Text
-                whiteSpace="normal"
-                textAlign="left"
-                fontSize={"lg"}
-                fontWeight="bold"
-              >
-                {genre.name}
-              </Text>
-            )}
+
+            <Text
+              color={genre.id === selectedGenre?.id ? "teal.300" : ""}
+              fontWeight="bold"
+              fontSize="lg"
+              whiteSpace="normal"
+              textAlign="left"
+            >
+              {genre.name}
+            </Text>
           </MenuItem>
         ))}
       </MenuList>

@@ -42,20 +42,14 @@ const GenreList = () => {
                   objectFit="cover"
                   src={getCroppedImgUrl(genre.image_background)}
                 />
-                {genre.id === selectedGenreID ? (
-                  <Text
-                    color="teal.300"
-                    fontWeight="bold"
-                    whiteSpace="normal"
-                    textAlign="left"
-                  >
-                    {genre.name}
-                  </Text>
-                ) : (
-                  <Text whiteSpace="normal" textAlign="left">
-                    {genre.name}
-                  </Text>
-                )}
+                <Text
+                  color={genre.id === selectedGenreID ? "teal.300" : ""}
+                  fontWeight={genre.id === selectedGenreID ? "bold" : ""}
+                  whiteSpace="normal"
+                  textAlign="left"
+                >
+                  {genre.name}
+                </Text>
               </HStack>
             </Button>
           </ListItem>
