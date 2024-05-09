@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import { GridItem, SimpleGrid } from "@chakra-ui/react";
+import ScrollToTop from "../components/ScrollToTop";
 
 function Layout() {
   return (
@@ -10,6 +11,7 @@ function Layout() {
       </GridItem>
       <GridItem area={"main"}>
         <Outlet />
+        <ScrollToTop />
       </GridItem>
     </SimpleGrid>
   );
